@@ -1,0 +1,431 @@
+/* ===========================
+   Golden Plate Theme Variables
+=========================== */
+:root {
+    --primary-color: #c89b3c;
+    --primary-dark: #8a6b25;
+    --accent-color: #e6b800;
+    --bg-color: #f8f5f0;
+    --text-color: #222;
+    --muted-text: #777;
+    --border-color: #ddd;
+    --danger-color: #c0392b;
+    --success-color: #27ae60;
+    --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+    --radius-lg: 20px;
+    --radius-md: 10px;
+    --radius-pill: 999px;
+}
+
+
+/* ===========================
+   Global Page Background
+=========================== */
+body {
+    background-color: var(--bg-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+
+/* ===========================
+   Page Wrapper (same as Dashboard)
+=========================== */
+.app-wrapper {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 16px;
+}
+
+
+/* ===========================
+   Cards (same as Dashboard)
+=========================== */
+.card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    border: 1px solid #f0e6d8;
+    box-shadow: var(--shadow-soft);
+    padding: 22px 26px;
+    margin-bottom: 20px;
+}
+
+/* Page title card with gradient header */
+.card-page-header {
+    background: linear-gradient(135deg, #fff8e6, #fefcf8);
+    border: 1px solid #f0e6d8;
+    padding: 26px 26px;
+    margin-bottom: 22px;
+}
+
+.page-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+}
+
+
+/* ===========================
+   Back Link
+=========================== */
+.back-link {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+
+/* ===========================
+   Buttons (Golden Plate Style)
+=========================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 22px;
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.16s ease-in-out;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+/* Add Schedule Page - Back Button */
+.back-btn {
+    background: #fff;
+    color: var(--primary-dark);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: var(--shadow-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.back-btn:hover {
+    background: #faf6e9;
+    border-color: var(--primary-color);
+    color: var(--primary-dark);
+}
+
+/* ===========================
+   Calendar Title
+=========================== */
+.app-section-title {
+    text-align: center;
+    color: var(--primary-dark);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+
+/* ===========================
+   Month Navigation
+=========================== */
+.calendar-nav {
+    text-align: center;
+    margin: 20px 0 22px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.calendar-nav a {
+    margin: 0 14px;
+    text-decoration: none;
+    color: var(--primary-dark);
+}
+
+.calendar-nav a:hover {
+    color: var(--primary-color);
+}
+
+.today-btn {
+    padding: 6px 16px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    color: var(--primary-dark);
+    text-decoration: none;
+    box-shadow: var(--shadow-soft);
+}
+
+.today-btn:hover {
+    background: #faf6e9;
+}
+
+
+/* ===========================
+   Add Schedule Button for calendar.php
+========================== */
+.add-btn-center {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.add-btn-center .btn-primary {
+    background: #fff;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-color);
+    padding: 10px 24px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    box-shadow: var(--shadow-soft);
+    text-decoration: none;
+    transition: 0.15s ease-in-out;
+}
+
+/* Hover should only slightly change background, NOT turn into dark gold */
+.add-btn-center .btn-primary:hover {
+    background: #faf6e9;   /* light cream */
+    color: var(--primary-dark); /* keep original text color */
+}
+
+
+
+/* ===========================
+   Calendar Layout
+=========================== */
+.calendar-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+/* Weekdays */
+.weekdays div {
+    background: #fff8e6;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid #eee4d7;
+    color: var(--primary-dark);
+}
+
+
+/* ===========================
+   Day Box
+=========================== */
+.day-box {
+    background: #fff;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    padding: 10px;
+    min-height: 95px;
+    transition: 0.18s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-box:hover {
+    transform: scale(1.02);
+}
+
+.day-box.empty {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.day-number {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+/* Today highlight */
+.day-box.today {
+    border: 2px solid var(--accent-color);
+    background: #fff8e6;
+    box-shadow: 0 0 12px rgba(230,184,0,0.35);
+}
+
+.day-box.today .day-number {
+    color: var(--accent-color);
+}
+
+
+/* ===========================
+   Shifts
+=========================== */
+.shift-box {
+    margin-top: 6px;
+    padding: 6px 8px;
+    font-size: 0.75rem;
+    border-radius: var(--radius-md);
+    color: var(--primary-dark);
+}
+
+.shift-color-0 { background: rgba(200,155,60,0.18); border-left: 4px solid #c89b3c; }
+.shift-color-1 { background: rgba(52,152,219,0.18); border-left: 4px solid #3498db; }
+.shift-color-2 { background: rgba(46,204,113,0.18); border-left: 4px solid #2ecc71; }
+.shift-color-3 { background: rgba(230,126,34,0.18); border-left: 4px solid #e67e22; }
+.shift-color-4 { background: rgba(155,89,182,0.18); border-left: 4px solid #9b59b6; }
+
+.shift-more {
+    font-size: 0.7rem;
+    color: var(--muted-text);
+    margin-top: 4px;
+}
+
+
+/* ===========================
+   View Link
+=========================== */
+.view-day-left {
+    margin-top: auto;
+    text-align: center;
+}
+
+.view-day-left a {
+    font-size: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.view-day-left a:hover {
+    color: var(--primary-color);
+}
+
+
+/* ===========================
+   Add / Edit Schedule Forms
+=========================== */
+.form-card {
+    background: #fff;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: #fffdf7;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(200,155,60,0.25);
+    outline: none;
+}
+
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 768px) {
+    .calendar-grid {
+        gap: 6px;
+    }
+    .day-box {
+        padding: 8px;
+    }
+}
+
+/* ===========================
+   View Schedule Page Buttons
+=========================== */
+
+.btn-white {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    padding: 10px 22px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    text-decoration: none;
+    box-shadow: var(--shadow-soft);
+    transition: 0.15s ease-in-out;
+}
+
+.btn-white:hover {
+    background: #faf6e9;
+    color: var(--primary-dark);
+}
+
+.btn-small {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+}
+
+/* Delete button */
+.btn-danger {
+    background: #fceaea;
+    color: #b33131;
+    border-radius: var(--radius-pill);
+    padding: 6px 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-danger:hover {
+    background: #f7d9d9;
+}
+
+/* ===========================
+   View Schedule Page - Add Schedule Button (same as calendar.php)
+=========================== */
+.view-header .btn-add-schedule {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    padding: 10px 24px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    text-decoration: none;
+    box-shadow: var(--shadow-soft);
+    transition: 0.15s ease-in-out;
+
+    /* Fix icon color */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.view-header .btn-add-schedule:hover {
+    background: #faf6e9;
+    color: var(--primary-dark);
+}
